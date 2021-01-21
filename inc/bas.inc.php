@@ -1,5 +1,3 @@
-inc/bas.inc.php
-?
 </div>
 </section>
 <footer>
