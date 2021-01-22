@@ -7,17 +7,6 @@ die("Erreur sur la requete sql.<br>Message : " . $mysqli->error . "<br>Code: " .
 }
 return $resultat;
 }
-function debug($var, $mode = 1) {
-echo '<div class="init">';
-    $trace = debug_backtrace();
-    $trace = array_shift($trace);
-    echo 'Debug demandé dans le fichier : $trace[file] à la ligne $trace[line].';
-    if($mode === 1) {
-    echo '<pre>'; print_r($var); echo '</pre>';
-    } else {
-    echo '<pre>'; var_dump($var); echo '</pre>';
-    } echo '</div>';
-}
 function internauteEstConnecte() {
     if(!isset($_SESSION['membre'])) return false;
     else return true;

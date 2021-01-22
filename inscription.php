@@ -1,12 +1,11 @@
 <?php require_once("inc/init.inc.php");
 if($_POST) {
-    debug($_POST);
     $verif_caractere = preg_match('#^[a-zA-Z0-9._-]+$#', $_POST['pseudo']);
     if(!$verif_caractere && (strlen($_POST['pseudo']) < 1 || strlen($_POST['pseudo']) > 20) ) {
         $contenu ='';
         $contenu .= "<div class='erreur'>Le pseudo doit contenir entre 1 et 20 caractères. <br> Caractère accepté : Lettre de A à Z et chiffre de 0 à 9</div>";
     } else {
-        $membre = executeRequete("SELECT * FROM membre WHERE pseudo='$_POST[pseudo]'");
+        $membre = executeRequete("SELECT * FROM membre WHERE pseudo like '$_POST[pseudo]'");
         if($membre->num_rows > 0) {
             $contenu ='';
             $contenu .= "<div class='erreur'>Pseudo indisponible. Veuillez en choisir un autre svp.</div>";

@@ -14,7 +14,7 @@ if (isset($_GET['action']) && $_GET['action'] == "vider") {
         }
         unset($_SESSION['panier']);
         mail($_SESSION['membre']['email'], "confirmation de la commande", "Merci votre n° de suivi est le $id_commande", "From:vendeur@dp_site.com");
-        $contenu .= "<div class='validation'>Merci pour votre commande. votre n° de suivi est le $id_commande</div>";
+        $contenu .= "<div class='validation'>Votre enchere est effectuée. votre n° de suivi est le $id_commande</div>";
     }
 }
 include("inc/haut.inc.php");
